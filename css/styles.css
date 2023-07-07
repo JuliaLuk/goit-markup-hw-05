@@ -485,6 +485,10 @@ button {
   max-width: 264px;
 }
 
+.footer-container-icon {
+  margin-right: 80px;
+}
+
 .footer-icon-text {
   font-weight: 500;
   font-size: 16px;
@@ -585,19 +589,27 @@ button {
   color: var(--secondary-black-cl);
   text-align: center;
   font-size: 16px;
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.5;
+  font-family: Roboto;
+  font-style: normal;
   letter-spacing: 0.32px;
   margin-bottom: 16px;
 }
 .modal-form {
 }
+
+.modal-form-field-container {
+  margin-bottom: 8px;
+}
 .modal-form-field {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--primary-gray-cl);
   position: relative;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .modal-form-lable {
   display: block;
@@ -610,6 +622,10 @@ button {
   line-height: 1.17;
   letter-spacing: 0.48px;
 }
+
+.modal-form-input-container {
+  position: relative;
+}
 .modal-form-input {
   font-size: 18px;
   width: 100%;
@@ -618,10 +634,12 @@ button {
   border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   padding: 8px 38px;
   outline: transparent;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-input:focus {
   border-radius: 4px;
-  border: 1px solid var(--primary-accent-cl);
+  border-color: var(--primary-accent-bg);
 }
 
 .modal-form-input:focus + .modal-form-icon {
@@ -631,17 +649,31 @@ button {
 
 .modal-form-icon {
   position: absolute;
-  bottom: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   left: 16px;
   fill: none;
   stroke: var(--secondary-black-bg);
 }
+
+.comment-container {
+  margin-bottom: 16px;
+}
 /* checkbox */
 
+.modal-form-agree-container {
+  margin-bottom: 24px;
+}
+
 .modal-form-agree {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--primary-gray-cl);
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+
   gap: 8px;
 }
 
@@ -649,14 +681,17 @@ button {
   background-color: var(--secondary-accent-bg);
 }
 .modal-form-custom-checkbox {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 16px;
   height: 16px;
   border-radius: 2px;
   border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.4));
-  fill: none;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-checkbox-icon {
   opacity: 0;
@@ -665,6 +700,9 @@ button {
 .modal-form-checkbox:checked
   + .modal-form-custom-checkbox
   > modal-form-checkbox-icon {
+  background-color: var(--secondary-accent-bg);
+  border: none;
+  fill: var(--secondary-white-bg);
   opacity: 1;
 }
 
@@ -695,6 +733,9 @@ button {
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.48px;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-comment::placeholder {
@@ -703,7 +744,25 @@ button {
 
 .modal-form-comment:focus {
   border-radius: 4px;
-  border: 1px solid var(--primary-accent-cl);
+  border-color: var(--primary-accent-cl);
+}
+
+.form-submit-button {
+  display: block;
+  margin-left: 95px;
+  min-width: 169px;
+  height: 56px;
+  font-family: "Roboto", sans-serif;
+  font-style: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--primary-white-cl);
+  cursor: pointer;
+  background-color: var(--primary-accent-bg);
+  border: none;
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* footer-form */
@@ -717,6 +776,7 @@ button {
   font-style: normal;
   font-weight: 500;
   margin-bottom: 16px;
+  line-height: 1.5;
 
   letter-spacing: 0.32px;
 }
@@ -735,17 +795,24 @@ button {
   letter-spacing: 0.48px;
 }
 .footer-form-input {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--primary-white-cl);
   padding: 8px 16px;
   width: 264px;
   height: 40px;
   border-radius: 4px;
   border: 1px solid var(--primary-white-bg);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   background-color: transparent;
   outline: transparent;
 }
+.footer-form-input:placeholder {
+  color: var(--primary-white-cl);
+}
 .fotter-subscr-btn {
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   padding: 8px 24px;
   display: flex;
@@ -755,6 +822,8 @@ button {
 }
 
 .footer-btn-icon {
+  margin-left: 16px;
+  fill: var(--primary-white-bg);
 }
 
 /* style to portfolio */
